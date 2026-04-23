@@ -6,7 +6,7 @@
     <title>최보원 포트폴리오</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0가; }
         :root {
             --bg:#f8f9fa; --ink:#0f0e0c; --ink2:#4a4843; --line:#e5e7eb;
             --accent:#7c3aed; --red:#e8341a; --green:#0a7f5e; --yellow:#f0b429;
@@ -696,6 +696,8 @@
                     <li><strong>Supabase RLS(Row Level Security)</strong> 기반 테이블별 세분화된 데이터 접근 제어 + <strong>4단계 역할 기반 팀 공유</strong>(Leader/Admin/Member/Viewer)</li>
                     <li><strong>Toss Payments SDK 구독 결제</strong> — <code>cancel_at_period_end</code> 패턴 + lazy cleanup으로 다운그레이드 시 별도 cron 없이 만료 처리</li>
                     <li><strong>실시간 스트리밍 Q&amp;A 채팅</strong>(Gemini), supadata API로 YouTube 자막 추출, <code>next/og</code> 동적 OG 이미지 생성까지 Next.js App Router Server/Client 분리로 풀스택 구현</li>
+                    <li><strong>분석 결과 PDF/Markdown 내보내기 + 공유 링크</strong> — <code>share_token</code> 발급으로 로그인 없이 외부 열람 가능, 링크 해제 시 즉시 접근 차단</li>
+                    <li><strong>팀 공개 API</strong> — SHA-256 해시 기반 API 키 발급, Bearer 토큰 인증 방식 REST API(<code>/api/v1/analyses</code>)로 팀 분석 결과 외부 시스템에서 조회 가능</li>
                 </ul>
             </div>
             <!-- TODO: href="#"를 실제 URL로 교체 -->
@@ -729,15 +731,15 @@
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">📌 개요</div>
-                <p><strong>Spring Boot MVC + JPA 기반 OTT 콘텐츠 통합 탐색·평가 플랫폼</strong>. <strong>키노라이츠(KinoLights)</strong> 서비스를 참고해 도메인을 설계하고, TMDB API 연동·Spring Security 인증·JPA ORM을 실사용 수준으로 적용한 클론 프로젝트.</p>
+                <p><strong>Spring Boot MVC + JPA 기반 OTT 콘텐츠 통합 탐색·평가 플랫폼</strong>. <strong>키노라이츠(KinoLights)</strong> 서비스를 참고해 도메인을 설계하고, TMDB·KOBIS·Gemini AI 3종 외부 API 연동, Spring Security 인증, JPA ORM을 실사용 수준으로 적용한 클론 프로젝트.</p>
             </div>
             <div class="arch-box">
                 <div class="arch-label">🔧 핵심 구현 포인트</div>
                 <ul class="feat-list">
                     <li><strong>Sync-on-demand 방식 TMDB API v3 연동</strong> — 상세 페이지 최초 접근 시 Discover·Details·Credits·Watch Providers 데이터를 DB에 동기화, 이후 빠른 조회 가능</li>
                     <li><strong>장르·OTT 매핑을 DB 테이블(<code>GenreTmdbMapping</code>)로 관리</strong> — 하드코딩 제거, 코드 수정 없이 확장 가능</li>
-                    <li><strong>Spring Security Form 로그인 + Google/Kakao OAuth2 통합</strong>, ADMIN/USER 역할 기반 URL 접근 제어. 신호등 평가는 <code>TrafficColor</code> Enum으로 구현</li>
-                    <li><strong>리팩토링</strong>: XSS 3단계 이스케이프(서버·클라이언트·JSP), Admin 이중 보안(<code>@PreAuthorize</code>+URL), H2→PostgreSQL(Supabase) 전환, MyBatis 제거 후 JPA 통일</li>
+                    <li><strong>Spring Security Form 로그인 + Google/Kakao OAuth2 통합</strong>, ADMIN/USER 역할 기반 URL 접근 제어. 신호등 평가는 <code>TrafficColor</code> Enum으로 구현. <strong>Gemini AI 기반 영화 추천 챗봇</strong> — 대화 히스토리 10턴 유지로 맥락 반영한 연속 대화</li>
+                    <li><strong>리팩토링</strong>: <strong>JSP → Thymeleaf 3 완전 전환</strong>(13개 뷰 마이그레이션, war→jar 패키징), XSS 3단계 이스케이프(서버·클라이언트·Thymeleaf), Admin 이중 보안(<code>@PreAuthorize</code>+URL), H2→PostgreSQL(Supabase) 전환, MyBatis 제거 후 JPA 통일</li>
                 </ul>
             </div>
             <!-- TODO: href="#"를 실제 URL로 교체 -->
@@ -754,7 +756,7 @@
         </div>
         <div class="pc-footer">
             <div class="work-tech">
-                <span class="wt">Java 11</span><span class="wt">Spring Boot 2.7</span><span class="wt">Spring Security</span><span class="wt">Spring Data JPA</span><span class="wt">OAuth2 Client</span><span class="wt">JSP</span><span class="wt">JavaScript</span><span class="wt">Supabase</span><span class="wt">PostgreSQL</span><span class="wt">TMDB API</span>
+                <span class="wt">Java 11</span><span class="wt">Spring Boot 2.7</span><span class="wt">Spring Security</span><span class="wt">Spring Data JPA</span><span class="wt">OAuth2 Client</span><span class="wt">Thymeleaf 3</span><span class="wt">JavaScript</span><span class="wt">Supabase</span><span class="wt">PostgreSQL</span><span class="wt">TMDB API</span><span class="wt">Gemini API</span><span class="wt">KOBIS API</span><span class="wt">Docker</span>
             </div>
         </div>
     </div>
@@ -771,15 +773,16 @@
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">📌 개요</div>
-                <p><strong>Next.js App Router + React 19로 구축한 Spotify 플레이리스트 추천 웹</strong>. <strong>6가지 감정 × 4가지 날씨</strong> 조합으로 맞춤 플레이리스트를 제안하고, OAuth 로그인 기반 개인 진단 히스토리를 관리하는 모바일 퍼스트 반응형 애플리케이션.</p>
+                <p><strong>Next.js App Router + React 19로 구축한 Spotify 맞춤 음악 추천 웹</strong>. <strong>6가지 감정 × 4가지 날씨 = 24가지 조합</strong>으로 <strong>트랙 / 플레이리스트 두 탭</strong>의 추천 결과를 제공하고, <strong>Top Artists 기반 개인화 추천</strong> + OAuth 로그인 기반 진단 히스토리를 관리하는 모바일 퍼스트 반응형 애플리케이션.</p>
             </div>
             <div class="arch-box">
                 <div class="arch-label">🔧 핵심 구현 포인트</div>
                 <ul class="feat-list">
-                    <li><strong>Spotify OAuth 2.0 Authorization Code Flow 직접 구현</strong> — State 파라미터로 CSRF 방지, HttpOnly Cookie에 토큰 저장(Production에서 <code>Secure</code> 플래그)으로 XSS 방어</li>
-                    <li><strong>2회 병렬 검색 + 중복 제거 병합</strong> — 감정 단독 / 날씨·감정 조합 쿼리를 <code>Promise.all</code>로 동시 호출 후 <code>Set</code> 기반 중복 제거로 추천 다양성 확보</li>
+                    <li><strong>Spotify OAuth 2.0 Authorization Code Flow 직접 구현</strong> — State 파라미터로 CSRF 방지, HttpOnly Cookie에 토큰 저장(Production <code>Secure</code> 플래그)으로 XSS 방어. <strong>Refresh Token 자동 갱신</strong>으로 재로그인 없이 세션 유지</li>
+                    <li><strong>2회 병렬 검색 + 중복 제거 병합 + Top Artists 개인화</strong> — 감정 단독 / 날씨·감정 조합 쿼리를 <code>Promise.all</code>로 동시 호출 후 <code>Set</code> 기반 중복 제거. 로그인 사용자의 <strong>최근 청취 아티스트를 쿼리에 반영</strong>한 개인화 트랙 추천</li>
+                    <li><strong>에러 핸들링 <code>fetchWithRetry</code></strong> — 429 Rate Limit → <code>Retry-After</code> 존중 대기, 5xx → 지수 백오프 재시도. 에러 타입별 UX 분기(재로그인 CTA / 재시도 버튼)</li>
                     <li><strong>Next.js App Router 풀스택 구성</strong> — 클라이언트 컴포넌트와 API Route를 단일 프로젝트에 배치, Supabase로 히스토리 영구 저장</li>
-                    <li><strong>recharts 기반 월별 감정 진단 히스토리 시각화</strong>, Spotify 다크 테마 차용한 UI</li>
+                    <li><strong>recharts 기반 월/주/일 3단위 감정 진단 히스토리 시각화</strong> + 트랙 30초 미리듣기(Preview) 재생, 다크/라이트 테마 토글</li>
                 </ul>
             </div>
             <!-- TODO: href="#"를 실제 URL로 교체 -->
