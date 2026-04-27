@@ -130,11 +130,9 @@
         .feat-list strong{color:var(--ink);font-weight:600}
         .feat-list code{font-family:var(--mono);font-size:.92em;background:var(--tag);padding:1px 5px;border-radius:3px;color:var(--ink)}
 
-        .pc-links{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-        .pc-link-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;font-size:.72rem;font-weight:600;color:var(--ink);background:var(--card);border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;transition:all .18s ease;font-family:var(--mono);letter-spacing:.02em}
+
+        .pc-link-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;font-size:.72rem;font-weight:600;color:var(--ink);background:var(--card);border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;transition:all .18s ease;font-family:var(--mono);letter-spacing:.02em;height:28px;box-sizing:border-box}
         .pc-link-btn:hover{background:var(--ink);color:var(--card);transform:translateY(-1px);box-shadow:0 4px 12px rgba(15,14,12,.18)}
-        .pc-link-btn.btn-accent{border-color:var(--accent);color:var(--accent)}
-        .pc-link-btn.btn-accent:hover{background:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(124,58,237,.28)}
 
         footer{margin-top:60px;padding:28px 0;border-top:2.5px solid var(--ink);display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.75rem;color:var(--ink2);flex-wrap:wrap;gap:12px}
         .filename{background:var(--ink);color:#fff;padding:4px 10px;border-radius:4px}
@@ -212,6 +210,23 @@
             .header-top{flex-direction:column}
             .contact-block{text-align:left}
         }
+        .pc-header-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+        .screenshot-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;font-size:.72rem;font-weight:600;color:var(--ink2);background:var(--card);border:1.5px solid var(--line);border-radius:999px;cursor:pointer;transition:all .18s ease;font-family:var(--mono);letter-spacing:.02em;height:28px;box-sizing:border-box}
+        .screenshot-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+        .screenshot-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+        .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;align-items:center;justify-content:center}
+        .modal-overlay.active{display:flex}
+        .modal-content{position:relative;max-width:900px;width:92%;max-height:85vh}
+        .modal-content img{width:100%;height:auto;border-radius:10px;object-fit:contain;max-height:80vh}
+        .modal-close{position:absolute;top:-36px;right:0;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:4px 10px;font-family:var(--mono)}
+        .modal-close:hover{opacity:.7}
+        .modal-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.6rem;cursor:pointer;padding:12px 16px;border-radius:8px;backdrop-filter:blur(4px);transition:background .2s}
+        .modal-nav:hover{background:rgba(255,255,255,.3)}
+        .modal-prev{left:-60px}
+        .modal-next{right:-60px}
+        .modal-indicator{text-align:center;margin-top:12px;color:rgba(255,255,255,.7);font-size:.8rem;font-family:var(--mono)}
+        @media(max-width:640px){.modal-prev{left:8px}.modal-next{right:8px}.modal-content{width:96%}}
+        @media print{.screenshot-btn{display:none}}
     </style>
 </head>
 <body>
@@ -303,6 +318,7 @@
                     <li>다중 테이블 삽입 트랜잭션 정합성 개선 + 중복 방지 DB 제약 조건 적용 → <strong>금액 불일치 해소</strong></li>
                     <li>가상계좌 통합 Socket Client 설계·구현 <em>(원천사 계약 미성사로 도입 보류)</em> 및 펌뱅킹 API 공통 인터페이스 설계 주도</li>
                     <li>내부 API 멀티 모듈 아키텍처 단독 전환, 백오피스 웹 취약점 대응 2인 TF 참여 (예외 처리 구조 개선·SMS 차단 로직 단독 담당)</li>
+                    <li>모든 배포 전 코드 리뷰 수행 (Git 프로젝트는 PR 기반, SVN 프로젝트는 화면 공유 방식)</li>
                 </ul>
                 <div class="work-tech">
                     <span class="wt">Java</span><span class="wt">Spring Boot</span><span class="wt">Spring Framework</span>
@@ -320,117 +336,18 @@
     <!-- 02 대표 프로젝트 -->
     <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">대표 프로젝트</span></div>
 
-    <!-- 포엠지 구분선 -->
-    <div class="company-divider">
-        <span class="cd-label">주식회사 포엠지</span>
-        <span class="cd-line"></span>
-    </div>
-
-    <!-- 포엠지 P1 -->
-    <div class="project-card">
-        <div class="pc-header">
-            <div>
-                <div class="pc-badge badge-poem">포엠지 · 2025.07 – 2025.08</div>
-                <div class="pc-title">가상계좌 결제 운영 시스템 구축 + 장애 알림 고도화</div>
-            </div>
-            <div class="pc-period">2개월</div>
-        </div>
-        <div class="pc-body">
-            <div class="arch-box">
-                <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>기존에도 결제 오류 발생 시 SMS 알림이 있었지만, 이벤트 구분이 단순하고 메시지가 빈약해 <strong>담당자가 알림을 받고도 원인 파악·대응이 지연되는</strong> 구조였습니다. <strong>알림 이벤트를 케이스별로 세분화하고, Telegram Bot API 채널을 추가해 수신 대상을 본사·가맹점으로 분리 라우팅</strong>하는 경량 개선 방식을 선택했습니다. 메시지 상세도를 높여 인지 속도를 확보하고, 알림 채널·대상 확장 시 인터페이스 추가만으로 대응 가능하게 설계했습니다. 관리자 시스템은 CS팀이 직접 조회·상태 변경이 가능하도록 권한 구조를 설계하여, 개발팀 인터럽트 없이 운영 부서가 자립 대응하는 구조를 목표로 했습니다.</p>
-            </div>
-            <div class="story-grid">
-                <div class="story-cell">
-                    <div class="story-label sl-p">🔴 문제</div>
-                    <p>가맹점 연동 문의·수동 데이터 변경 요청 빈번. 기존 SMS 알림은 이벤트 구분이 단순하고 메시지가 빈약해 원인 파악·대응이 지연. CS팀이 매번 개발팀에 상태 확인 요청</p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-a">🟣 내 역할·행동</div>
-                    <p>요구사항 정의부터 관리자 페이지 구축·API 배포 전 과정 리딩. 기존 SMS 알림 이벤트 케이스별 세분화, Telegram Bot 채널 신규 추가로 본사·가맹점 수신 대상 분리, 알림 메시지 상세화까지 장애 인지 파이프라인 단독 개선</p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-r">🟢 결과</div>
-                    <p>운영 수동 대응·CS 처리 시간 <strong>단축</strong>, 장애 인지·대응 속도 <strong>수 분 단위로 단축</strong>, 운영팀이 개발팀 인터럽트 없이 자립 대응 가능</p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-w">🟡 배운 점</div>
-                    <p>장애 알림의 가치는 '발송 여부'가 아니라 <strong>수신자가 즉시 판단 가능한가</strong>에 있음. 이벤트를 세분화하고 메시지에 맥락을 담아야 개발팀 문의 없이 운영팀이 스스로 대응 가능해지고, 그것이 곧 인지·대응 속도로 직결된다는 것을 체감</p>
-                </div>
-            </div>
-        </div>
-        <div class="pc-footer">
-            <div class="work-tech">
-                <span class="wt">Java</span><span class="wt">Spring Boot</span><span class="wt">MyBatis</span>
-                <span class="wt">MariaDB</span><span class="wt">Telegram API</span><span class="wt">Git</span><span class="wt">Jenkins</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 포엠지 P2 -->
-    <div class="project-card">
-        <div class="pc-header">
-            <div>
-                <div class="pc-badge badge-poem">포엠지 · 2025.06 – 2025.07</div>
-                <div class="pc-title">외부 공지사항 크롤링 기반 엑셀 수집 배치 자동화</div>
-            </div>
-            <div class="pc-period">2개월</div>
-        </div>
-        <div class="pc-body">
-            <div class="arch-box">
-                <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>Jenkins 스케줄러에 월 1회 실행되는 Java 배치를 등록하는 구조로 구현했습니다. Jsoup으로 외부 사이트를 파싱하고 Apache POI로 엑셀을 처리하는 파이프라인을 <strong>함수 단위로 분리</strong>해, 파싱 대상 추가나 엑셀 구조 변경에 최소 변경으로 대응 가능하게 설계했습니다.</p>
-            </div>
-            <div class="story-grid">
-                <div class="story-cell">
-                    <div class="story-label sl-p">🔴 문제</div>
-                    <p>매월 외부 사이트 공지사항 첨부 엑셀 파일을 담당자가 직접 다운로드 후 수기로 DB 입력. 월 단위로 상당한 시간 소요 + 입력 오류·누락 반복 발생</p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-a">🟣 내 역할·행동</div>
-                    <p>요구사항 분석부터 배치 전 과정 단독 설계·구현. 외부 사이트 파싱(Jsoup) → 엑셀 다운로드 → 데이터 파싱(POI) → DB 반영 파이프라인 구축</p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-r">🟢 결과</div>
-                    <p>월 단위 수작업 <strong>완전 제거</strong>, 입력 오류·누락 <strong>해소</strong>. 담당자 부재 시에도 정기 자동 수집으로 업무 연속성 확보</p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-w">🟡 배운 점</div>
-                    <p>외부 사이트 데이터는 구조가 불안정함을 전제로 설계해야 함. <strong>고정 인덱스 방식은 작은 변화에도 깨지기 때문에</strong>, 헤더명·필드명 기반 동적 매핑처럼 스키마 변화를 흡수할 수 있는 구조를 처음부터 고려하는 것이 운영 안정성의 핵심</p>
-                </div>
-            </div>
-            <div class="ts-box">
-                <div class="ts-q">트러블슈팅: 일부 월의 엑셀 시트 구조·데이터 형식이 달라 파싱 오류 발생</div>
-                <div class="ts-a">외부 공지사항 엑셀이 대부분은 동일한 구조지만, 간헐적으로 헤더 행 위치·컬럼 순서가 바뀌거나 데이터 형식이 달라지는 케이스가 발생. 고정 인덱스 방식으로는 대응이 어려워 헤더명 기반 동적 컬럼 매핑 방식으로 전환해 해결. 이후 유사한 구조 변경 시에도 매핑 설정 수정만으로 대응 가능하게 구조화.</div>
-            </div>
-        </div>
-        <div class="pc-footer">
-            <div class="work-tech">
-                <span class="wt">Java</span><span class="wt">Jsoup</span>
-                <span class="wt">Apache POI</span><span class="wt">MariaDB</span><span class="wt">Jenkins</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 케이원피에스 구분선 -->
-    <div class="company-divider" style="margin-top:32px">
-        <span class="cd-label">주식회사 케이원피에스</span>
-        <span class="cd-line"></span>
-    </div>
-
     <!-- 케이원피에스 P1 -->
     <div class="project-card">
         <div class="pc-header">
             <div>
-                <div class="pc-badge badge-k1">케이원피에스 · 2025.02 – 2025.05</div>
+                <div class="pc-badge badge-k1">케이원피에스 · 2025.02 – 2025.03</div>
                 <div class="pc-title">정산·매입 시스템 고도화 — 정책 DB화 & 트랜잭션 정합성 개선</div>
             </div>
-            <div class="pc-period">4개월</div>
         </div>
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>카드 종류별 수수료·수수료율·무이자 할부 여부 등 정산 정책 값이 전부 조건문에 하드코딩돼 있어, <strong>정책이 바뀔 때마다 코드 수정·재배포가 필요</strong>했고 누락 시 금액 오류로 직결되는 리스크가 있었습니다. 이 값들을 <strong>DB로 이관</strong>하고, 운영자가 직접 정책을 등록·수정·삭제할 수 있도록 <strong>관리자 페이지 CRUD 화면을 신규 구축</strong>해 개발팀 인터럽트 없이 정책 변경이 가능한 구조로 개선했습니다. 계산 로직은 메서드 단위로 책임을 분리해 가독성·재사용성을 확보했습니다. 다중 테이블 삽입 중 일부 실패 시 금액 불일치가 발생하던 문제는 예외 케이스를 분석하고 <strong>중복 방지 DB 제약 조건</strong>으로 원천 차단했습니다.</p>
+                <p>카드 종류별 수수료·수수료율·무이자 할부 여부 등 정산 정책 값이 전부 조건문에 하드코딩돼 있어, <strong>정책이 바뀔 때마다 코드 수정·재배포가 필요</strong>했고 누락 시 금액 오류로 직결되는 리스크가 있었습니다. Enum/상수 클래스로 Application 단에서 관리하는 방안도 있었지만, 수수료가 카드별·카드 종류별로 수십 가지에 달하고 변동 빈도가 높아 결국 코드 수정·재배포가 반복되는 구조였기 때문에 <strong>DB + 관리자 화면</strong> 방식이 운영 효율성 면에서 가장 적합하다고 판단했습니다. 이 값들을 <strong>DB로 이관</strong>하고, 운영자가 직접 정책을 등록·수정·삭제할 수 있도록 <strong>관리자 페이지 CRUD 화면을 신규 구축</strong>해 개발팀 인터럽트 없이 정책 변경이 가능한 구조로 개선했습니다. 계산 로직은 메서드 단위로 책임을 분리해 가독성·재사용성을 확보했습니다. 다중 테이블 삽입 중 일부 실패 시 금액 불일치가 발생하던 문제는 예외 케이스를 분석하고 <strong>중복 방지 DB 제약 조건</strong>으로 원천 차단했습니다.</p>
             </div>
             <div class="story-grid">
                 <div class="story-cell">
@@ -466,15 +383,14 @@
     <div class="project-card">
         <div class="pc-header">
             <div>
-                <div class="pc-badge badge-k1">케이원피에스 · 2024.11 – 2025.01</div>
+                <div class="pc-badge badge-k1">케이원피에스 · 2024.12 – 2025.01</div>
                 <div class="pc-title">백오피스 웹 취약점 대응 및 예외 처리 구조 개선</div>
             </div>
-            <div class="pc-period">3개월</div>
         </div>
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>웹 취약점 진단에서 <strong>관리자 페이지 예외 발생 시 내부 오류 메시지가 외부로 노출되는 이슈</strong>가 확인되었고, 이를 수정하는 과정에서 <strong>예외 처리가 십여 개의 개별 핸들러로 과도하게 세분화되어 팀원마다 잘못된 핸들러를 선택하는 경우(예: NoData 에러를 Duplicate 에러 핸들러로 처리)가 빈번</strong>함을 발견했습니다. 단순 노출 차단에 그치지 않고 <strong>근본 원인인 예외 처리 구조를 CustomException + ErrorCode 기반 공통 ExceptionHandler</strong>로 통합해 분류 실수를 구조적으로 차단하고 내부 오류 메시지 노출 문제를 함께 해결했습니다. 추가로 SMS 발송 버튼 무한 클릭 이슈는 <strong>카운트 기반 임계치 차단 로직</strong>으로 대응했습니다.</p>
+                <p>웹 취약점 진단에서 <strong>관리자 페이지 예외 발생 시 내부 오류 메시지가 외부로 노출되는 이슈</strong>가 확인되었고, 이를 수정하는 과정에서 <strong>예외 처리가 십여 개의 개별 핸들러로 과도하게 세분화되어 팀원마다 잘못된 핸들러를 선택하는 경우(예: NoData 에러를 Duplicate 에러 핸들러로 처리)가 빈번</strong>함을 발견했습니다. 잘못된 핸들러가 선택되면 해당 에러 코드에 등록된 <strong>맞지 않는 메시지가 사용자에게 그대로 노출</strong>되는 문제까지 연쇄적으로 발생했습니다. 개별 핸들러를 하나씩 수정하는 방안도 있었지만, 핸들러가 추가될수록 같은 실수가 반복될 <strong>구조적 문제</strong>였기 때문에 공통 ExceptionHandler로 일원화하는 방향을 택했습니다. 단순 노출 차단에 그치지 않고 <strong>근본 원인인 예외 처리 구조를 CustomException + ErrorCode 기반 공통 ExceptionHandler</strong>로 통합해 분류 실수를 구조적으로 차단하고 내부 오류 메시지 노출 문제를 함께 해결했습니다. 추가로 SMS 발송 버튼 무한 클릭 이슈는 <strong>카운트 기반 임계치 차단 로직</strong>으로 대응했습니다.</p>
             </div>
             <div class="story-grid">
                 <div class="story-cell">
@@ -509,12 +425,11 @@
                 <div class="pc-badge badge-k1">케이원피에스 · 2024.08 – 2024.09</div>
                 <div class="pc-title">펌뱅킹 API 공통 인터페이스 설계 및 통합 개발</div>
             </div>
-            <div class="pc-period">2개월</div>
         </div>
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>다수의 외부 통신망마다 별도 연동 코드를 작성하면 중복이 심해지고, 신규 통신망 추가 시 유사한 코드를 반복 작성해야 하는 구조였습니다. <strong>공통 인터페이스 기반 라우팅 API</strong>를 설계하여 통신망별 구현체만 추가하면 되는 구조로 통합했습니다. 공통 오류 처리·로깅 기준도 단일 지점에서 관리하여 운영 대응의 일관성을 높였습니다.</p>
+                <p>기존에는 통신망마다 별도 프로젝트로 관리하고 있었지만, 내부 처리 로직과 DB 구조가 대부분 동일하고 데이터만 다른 수준이었습니다. 매번 신규 통신망이 추가될 때마다 새 프로젝트를 생성하는 것은 중복이 심하고 유지보수 비용이 계속 증가하는 구조였습니다. <strong>공통 인터페이스 기반 라우팅 API</strong>를 설계하여 통신망별 구현체만 추가하면 되는 구조로 통합했습니다. 공통 오류 처리·로깅 기준도 단일 지점에서 관리하여 운영 대응의 일관성을 높였습니다.</p>
             </div>
             <div class="story-grid">
                 <div class="story-cell">
@@ -543,47 +458,6 @@
         </div>
     </div>
 
-    <!-- 케이원피에스 P4 소켓 -->
-    <div class="project-card">
-        <div class="pc-header">
-            <div>
-                <div class="pc-badge badge-k1">케이원피에스 · 2024.04 – 2024.05</div>
-                <div class="pc-title">가상계좌 통합 Socket Client 신규 구축 — 원천사별 중복 프로젝트 통합</div>
-            </div>
-            <div class="pc-period">2개월</div>
-        </div>
-        <div class="pc-body">
-            <div class="arch-box">
-                <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>가상계좌 거래는 원천사(은행)마다 전문 양식이 달라, 기존에는 <strong>원천사별로 별도 프로젝트를 두고 운영</strong>하는 구조였습니다. 그 결과 프로젝트마다 소스의 대부분이 중복되고, 신규 원천사 연동 시 거의 동일한 프로젝트를 새로 생성해야 하는 비효율이 있었습니다. 이를 <strong>공통 인터페이스 + 원천사별 구현체</strong> 구조로 통합해, 신규 원천사는 <strong>구현체 추가만으로 대응 가능</strong>한 단일 통합 소켓 클라이언트로 단독 설계·구현했습니다.</p>
-            </div>
-            <div class="story-grid">
-                <div class="story-cell">
-                    <div class="story-label sl-p">🔴 문제</div>
-                    <p>가상계좌 원천사가 다수였고 각 원천사별로 별도 프로젝트를 운영 - 소스 대부분이 중복이지만 <strong>전문 양식만 다른 구조</strong>. 신규 원천사 추가 시마다 프로젝트를 새로 생성해야 해 중복·유지보수 비용 지속 증가</p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-a">🟣 내 역할·행동</div>
-                    <p>원천사 공통 로직을 인터페이스로 추상화하고 원천사별 전문 양식은 <strong>구현체로 분리</strong>한 통합 소켓 클라이언트 단독 설계·구현. 신규 원천사 연동 시 구현체 추가만으로 대응 가능한 구조 확보. Spring Boot 기반으로 구축</p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-r">🟢 결과</div>
-                    <p>원천사별 프로젝트 중복을 단일 통합 구조로 제거 + 신규 원천사 대응 비용 감소 구조 설계·구현 완료. <strong>다만 원천사 계약 미성사로 실제 운영 도입은 보류</strong></p>
-                </div>
-                <div class="story-cell">
-                    <div class="story-label sl-w">🟡 배운 점</div>
-                    <p>반복되는 중복 프로젝트를 마주했을 때 '프로젝트를 하나 더 만드는 것'이 아니라 <strong>'구조로 풀어내는 것'</strong>이 먼저라는 관점을 얻음. 이 경험이 이후 펌뱅킹 API 공통 인터페이스 설계의 기반이 됨</p>
-                </div>
-            </div>
-        </div>
-        <div class="pc-footer">
-            <div class="work-tech">
-                <span class="wt">Java</span><span class="wt">Spring Boot</span><span class="wt">Socket Programming</span>
-                <span class="wt">MariaDB</span><span class="wt">MyBatis</span><span class="wt">Git</span>
-            </div>
-        </div>
-    </div>
-
 
     <!-- 03 추가 프로젝트 -->
     <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">추가 프로젝트</span></div>
@@ -596,6 +470,24 @@
         </tr>
         </thead>
         <tbody>
+        <tr>
+            <td class="et-period">2025.07 – 08</td>
+            <td>
+                <div class="et-title">가상계좌 결제 운영 시스템 구축 + 장애 알림 고도화</div>
+                <div class="et-desc">가상계좌 관리자 시스템 신규 구축으로 운영팀 자립 대응 구조 전환. 기존 SMS 알림 이벤트를 케이스별 세분화하고 Telegram 채널 추가로 본사·가맹점 수신 대상 분리 라우팅. 알림 메시지 상세화로 장애 인지·대응 속도 수 분 단위로 단축</div>
+                <span class="et-tag">Java</span><span class="et-tag">Spring Boot</span><span class="et-tag">MyBatis</span><span class="et-tag">MariaDB</span><span class="et-tag">Telegram API</span><span class="et-tag">Jenkins</span>
+            </td>
+            <td style="font-size:.8rem;color:var(--ink2)">포엠지</td>
+        </tr>
+        <tr>
+            <td class="et-period">2025.06 – 07</td>
+            <td>
+                <div class="et-title">외부 공지사항 크롤링 기반 엑셀 수집 배치 자동화</div>
+                <div class="et-desc">월 1회 반복되던 외부 사이트 공지사항 엑셀 수기 입력을 Jenkins + Java 배치로 자동화. Jsoup 파싱 → Apache POI 엑셀 처리 → DB 반영 파이프라인 구축. 헤더명 기반 동적 컬럼 매핑으로 엑셀 구조 변경에 유연 대응</div>
+                <span class="et-tag">Java</span><span class="et-tag">Jsoup</span><span class="et-tag">Apache POI</span><span class="et-tag">MariaDB</span><span class="et-tag">Jenkins</span>
+            </td>
+            <td style="font-size:.8rem;color:var(--ink2)">포엠지</td>
+        </tr>
         <tr>
             <td class="et-period">2025.04 – 05</td>
             <td>
@@ -642,6 +534,15 @@
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
         </tr>
         <tr>
+            <td class="et-period">2024.04 – 05</td>
+            <td>
+                <div class="et-title">가상계좌 통합 Socket Client 설계·구현</div>
+                <div class="et-desc">원천사별 별도 프로젝트로 운영되던 가상계좌 소켓 통신을 공통 인터페이스 + 구현체 구조로 통합 설계·구현. 신규 원천사 연동 시 구현체 추가만으로 대응 가능한 구조 확보. 이 경험이 이후 펌뱅킹 API 공통 인터페이스 설계의 기반이 됨</div>
+                <span class="et-tag">Java</span><span class="et-tag">Spring Boot</span><span class="et-tag">Socket Programming</span><span class="et-tag">MariaDB</span><span class="et-tag">MyBatis</span><span class="et-tag">Git</span>
+            </td>
+            <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
+        </tr>
+        <tr>
             <td class="et-period">2024.01 – 03</td>
             <td>
                 <div class="et-title">백오피스 기능 개선 TF</div>
@@ -682,12 +583,15 @@
                 <div class="pc-badge badge-side">개인 프로젝트 · 2026.03.12 – 03.27</div>
                 <div class="pc-title">AI 기반 문서·영상 분석·비교 플랫폼</div>
             </div>
-            <div class="pc-period">2주</div>
+            <div class="pc-header-right">
+                <button class="screenshot-btn" onclick="openGallery('mindlens')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> 화면 보기</button>
+                <a href="https://github.com/bowoni/mindlens" target="_blank" rel="noopener" class="pc-link-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.73 1.26 3.4.96.1-.75.4-1.26.74-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.35.77 1.05.77 2.12v3.14c0 .31.21.67.8.56C20.22 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg> GitHub</a>
+            </div>
         </div>
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">📌 개요</div>
-                <p>Next.js App Router + Supabase + Gemini API + YouTube Data API 기반 <strong>AI SaaS 풀스택 구현 프로젝트</strong>. <strong>PDF·DOCX 문서와 YouTube 영상을 Gemini 2.5 Flash로 분석</strong>해 요약·키워드·인사이트를 제공하고, 2~3개 결과를 교차 비교해 공통점·차이점·종합 인사이트까지 뽑아주는 풀스택 웹.</p>
+                <p>Supabase + Gemini API + YouTube Data API + Toss Payments 기반 <strong>AI SaaS 서버 사이드 구현 프로젝트</strong>. <strong>PDF·DOCX 문서와 YouTube 영상을 Gemini 2.5 Flash로 분석</strong>해 요약·키워드·인사이트를 제공하고, 2~3개 결과를 교차 비교해 공통점·차이점·종합 인사이트까지 뽑아주는 풀스택 웹.</p>
             </div>
             <div class="arch-box">
                 <div class="arch-label">🔧 핵심 구현 포인트</div>
@@ -695,26 +599,15 @@
                     <li><strong>도메인 특화 프롬프트 DB 관리</strong> — <code>domain_configs</code> 테이블에 계약서·논문·보고서·이력서 등 유형별 프롬프트를 저장해 코드 수정 없이 확장 가능</li>
                     <li><strong>Supabase RLS(Row Level Security)</strong> 기반 테이블별 세분화된 데이터 접근 제어 + <strong>4단계 역할 기반 팀 공유</strong>(Leader/Admin/Member/Viewer)</li>
                     <li><strong>Toss Payments SDK 구독 결제</strong> — <code>cancel_at_period_end</code> 패턴 + lazy cleanup으로 다운그레이드 시 별도 cron 없이 만료 처리</li>
-                    <li><strong>실시간 스트리밍 Q&amp;A 채팅</strong>(Gemini), supadata API로 YouTube 자막 추출, <code>next/og</code> 동적 OG 이미지 생성까지 Next.js App Router Server/Client 분리로 풀스택 구현</li>
+                    <li><strong>Gemini 실시간 스트리밍 응답 처리</strong> + supadata API 연동으로 YouTube 자막 추출. API Route 기반 서버 사이드 로직 분리로 AI 분석·채팅·비교 엔드포인트 설계</li>
                     <li><strong>분석 결과 PDF/Markdown 내보내기 + 공유 링크</strong> — <code>share_token</code> 발급으로 로그인 없이 외부 열람 가능, 링크 해제 시 즉시 접근 차단</li>
                     <li><strong>팀 공개 API</strong> — SHA-256 해시 기반 API 키 발급, Bearer 토큰 인증 방식 REST API(<code>/api/v1/analyses</code>)로 팀 분석 결과 외부 시스템에서 조회 가능</li>
                 </ul>
             </div>
-            <!-- TODO: href="#"를 실제 URL로 교체 -->
-            <div class="pc-links">
-                <a href="https://github.com/bowoni/mindlens" target="_blank" rel="noopener" class="pc-link-btn">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.73 1.26 3.4.96.1-.75.4-1.26.74-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.35.77 1.05.77 2.12v3.14c0 .31.21.67.8.56C20.22 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg>
-                    GitHub
-                </a>
-<!--                <a href="#" target="_blank" rel="noopener" class="pc-link-btn btn-accent">-->
-<!--                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>-->
-<!--                    Live Demo-->
-<!--                </a>-->
-            </div>
         </div>
         <div class="pc-footer">
             <div class="work-tech">
-                <span class="wt">Next.js 16</span><span class="wt">TypeScript</span><span class="wt">Tailwind CSS 4</span><span class="wt">Supabase</span><span class="wt">Gemini API</span><span class="wt">Toss Payments</span><span class="wt">YouTube Data API</span><span class="wt">supadata API</span><span class="wt">Vercel</span>
+                <span class="wt">Next.js 16</span><span class="wt">TypeScript</span><span class="wt">Supabase</span><span class="wt">PostgreSQL</span><span class="wt">Gemini API</span><span class="wt">Toss Payments</span><span class="wt">YouTube Data API</span><span class="wt">supadata API</span><span class="wt">Vercel</span>
             </div>
         </div>
     </div>
@@ -726,7 +619,10 @@
                 <div class="pc-badge badge-side">개인 프로젝트 · 2026.02.25 – 03.10</div>
                 <div class="pc-title">OTT 콘텐츠 통합 탐색·평가 플랫폼</div>
             </div>
-            <div class="pc-period">2주</div>
+            <div class="pc-header-right">
+                <button class="screenshot-btn" onclick="openGallery('mykino')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> 화면 보기</button>
+                <a href="https://github.com/bowoni/my-kino" target="_blank" rel="noopener" class="pc-link-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.73 1.26 3.4.96.1-.75.4-1.26.74-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.35.77 1.05.77 2.12v3.14c0 .31.21.67.8.56C20.22 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg> GitHub</a>
+            </div>
         </div>
         <div class="pc-body">
             <div class="arch-box">
@@ -741,17 +637,6 @@
                     <li><strong>Spring Security Form 로그인 + Google/Kakao OAuth2 통합</strong>, ADMIN/USER 역할 기반 URL 접근 제어. 신호등 평가는 <code>TrafficColor</code> Enum으로 구현. <strong>Gemini AI 기반 영화 추천 챗봇</strong> — 대화 히스토리 10턴 유지로 맥락 반영한 연속 대화</li>
                     <li><strong>리팩토링</strong>: <strong>JSP → Thymeleaf 3 완전 전환</strong>(13개 뷰 마이그레이션, war→jar 패키징), XSS 3단계 이스케이프(서버·클라이언트·Thymeleaf), Admin 이중 보안(<code>@PreAuthorize</code>+URL), H2→PostgreSQL(Supabase) 전환, MyBatis 제거 후 JPA 통일</li>
                 </ul>
-            </div>
-            <!-- TODO: href="#"를 실제 URL로 교체 -->
-            <div class="pc-links">
-                <a href="https://github.com/bowoni/my-kino" target="_blank" rel="noopener" class="pc-link-btn">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.73 1.26 3.4.96.1-.75.4-1.26.74-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.35.77 1.05.77 2.12v3.14c0 .31.21.67.8.56C20.22 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg>
-                    GitHub
-                </a>
-<!--                <a href="#" target="_blank" rel="noopener" class="pc-link-btn btn-accent">-->
-<!--                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>-->
-<!--                    Live Demo-->
-<!--                </a>-->
             </div>
         </div>
         <div class="pc-footer">
@@ -768,12 +653,15 @@
                 <div class="pc-badge badge-side">개인 프로젝트 · 2026.02.14 – 02.24</div>
                 <div class="pc-title">감정·날씨 기반 Spotify 플레이리스트 추천 서비스</div>
             </div>
-            <div class="pc-period">10일</div>
+            <div class="pc-header-right">
+                <button class="screenshot-btn" onclick="openGallery('vibecheck')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> 화면 보기</button>
+                <a href="https://github.com/bowoni/vibe-check" target="_blank" rel="noopener" class="pc-link-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.73 1.26 3.4.96.1-.75.4-1.26.74-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.35.77 1.05.77 2.12v3.14c0 .31.21.67.8.56C20.22 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg> GitHub</a>
+            </div>
         </div>
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">📌 개요</div>
-                <p><strong>Next.js App Router + React 19로 구축한 Spotify 맞춤 음악 추천 웹</strong>. <strong>6가지 감정 × 4가지 날씨 = 24가지 조합</strong>으로 <strong>트랙 / 플레이리스트 두 탭</strong>의 추천 결과를 제공하고, <strong>Top Artists 기반 개인화 추천</strong> + OAuth 로그인 기반 진단 히스토리를 관리하는 모바일 퍼스트 반응형 애플리케이션.</p>
+                <p><strong>Spotify Web API + OAuth 2.0 기반 맞춤 음악 추천 서비스</strong>. <strong>6가지 감정 × 4가지 날씨 = 24가지 조합</strong>의 키워드 매핑 추천 엔진과 <strong>Top Artists 기반 개인화 트랙 추천</strong>을 구현하고, Supabase(PostgreSQL)로 사용자별 진단 히스토리를 영속화·집계하는 서버 사이드 로직을 설계한 프로젝트.</p>
             </div>
             <div class="arch-box">
                 <div class="arch-label">🔧 핵심 구현 포인트</div>
@@ -781,25 +669,14 @@
                     <li><strong>Spotify OAuth 2.0 Authorization Code Flow 직접 구현</strong> — State 파라미터로 CSRF 방지, HttpOnly Cookie에 토큰 저장(Production <code>Secure</code> 플래그)으로 XSS 방어. <strong>Refresh Token 자동 갱신</strong>으로 재로그인 없이 세션 유지</li>
                     <li><strong>2회 병렬 검색 + 중복 제거 병합 + Top Artists 개인화</strong> — 감정 단독 / 날씨·감정 조합 쿼리를 <code>Promise.all</code>로 동시 호출 후 <code>Set</code> 기반 중복 제거. 로그인 사용자의 <strong>최근 청취 아티스트를 쿼리에 반영</strong>한 개인화 트랙 추천</li>
                     <li><strong>에러 핸들링 <code>fetchWithRetry</code></strong> — 429 Rate Limit → <code>Retry-After</code> 존중 대기, 5xx → 지수 백오프 재시도. 에러 타입별 UX 분기(재로그인 CTA / 재시도 버튼)</li>
-                    <li><strong>Next.js App Router 풀스택 구성</strong> — 클라이언트 컴포넌트와 API Route를 단일 프로젝트에 배치, Supabase로 히스토리 영구 저장</li>
-                    <li><strong>recharts 기반 월/주/일 3단위 감정 진단 히스토리 시각화</strong> + 트랙 30초 미리듣기(Preview) 재생, 다크/라이트 테마 토글</li>
+                    <li><strong>Route Handler 기반 서버 사이드 API 설계</strong> — Spotify 인증·검색·추천 + Supabase CRUD를 API Route로 분리. 모든 토큰 관리를 서버에서 처리해 클라이언트 노출 차단</li>
+                    <li><strong>Supabase(PostgreSQL) 기반 히스토리 집계</strong> — Spotify User ID로 사용자 데이터 격리, 월/주/일 3단위 기간별 집계 로직 설계</li>
                 </ul>
-            </div>
-            <!-- TODO: href="#"를 실제 URL로 교체 -->
-            <div class="pc-links">
-                <a href="https://github.com/bowoni/vibe-check" target="_blank" rel="noopener" class="pc-link-btn">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.73 1.26 3.4.96.1-.75.4-1.26.74-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.35.77 1.05.77 2.12v3.14c0 .31.21.67.8.56C20.22 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg>
-                    GitHub
-                </a>
-<!--                <a href="#" target="_blank" rel="noopener" class="pc-link-btn btn-accent">-->
-<!--                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>-->
-<!--                    Live Demo-->
-<!--                </a>-->
             </div>
         </div>
         <div class="pc-footer">
             <div class="work-tech">
-                <span class="wt">Next.js 16</span><span class="wt">React 19</span><span class="wt">TypeScript 5</span><span class="wt">Tailwind CSS 4</span><span class="wt">Spotify Web API</span><span class="wt">OAuth 2.0</span><span class="wt">Supabase</span><span class="wt">recharts</span>
+                <span class="wt">Next.js 16</span><span class="wt">TypeScript</span><span class="wt">Spotify Web API</span><span class="wt">OAuth 2.0</span><span class="wt">Supabase</span><span class="wt">PostgreSQL</span>
             </div>
         </div>
     </div>
@@ -864,6 +741,79 @@
 })();
 </script>
 -->
+
+<div class="modal-overlay" id="gallery-modal" onclick="closeGallery(event)">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeGallery(event)">&times;</button>
+        <button class="modal-nav modal-prev" onclick="prevSlide(event)">&lsaquo;</button>
+        <img id="gallery-img" src="" alt="스크린샷">
+        <button class="modal-nav modal-next" onclick="nextSlide(event)">&rsaquo;</button>
+        <div class="modal-indicator" id="gallery-indicator">1 / 3</div>
+    </div>
+</div>
+
+<script>
+(function(){
+    var galleries = {
+        mindlens: [
+            {src:'images/mindlens/hero-dashboard.png', alt:'MindLens 대시보드'},
+            {src:'images/mindlens/features.png', alt:'MindLens 핵심 기능'},
+            {src:'images/mindlens/feat-pricing.png', alt:'MindLens 요금제'}
+        ],
+        mykino: [
+            {src:'images/mykino/hero-home.png', alt:'MyKino 홈 화면'},
+            {src:'images/mykino/features.png', alt:'MyKino 탐색 플로우'},
+            {src:'images/mykino/feat-content-detail.png', alt:'MyKino 콘텐츠 상세'}
+        ],
+        vibecheck: [
+            {src:'images/vibecheck/hero-landing.png', alt:'Vibe Check 랜딩'},
+            {src:'images/vibecheck/features.png', alt:'Vibe Check 핵심 플로우'}
+        ]
+    };
+    var current = {key:'', index:0};
+    var modal = document.getElementById('gallery-modal');
+    var img = document.getElementById('gallery-img');
+    var indicator = document.getElementById('gallery-indicator');
+
+    window.openGallery = function(key){
+        current.key = key;
+        current.index = 0;
+        show();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+    window.closeGallery = function(e){
+        if(e.target === modal || e.currentTarget.classList.contains('modal-close')){
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+    window.prevSlide = function(e){
+        e.stopPropagation();
+        var len = galleries[current.key].length;
+        current.index = (current.index - 1 + len) % len;
+        show();
+    };
+    window.nextSlide = function(e){
+        e.stopPropagation();
+        var len = galleries[current.key].length;
+        current.index = (current.index + 1) % len;
+        show();
+    };
+    function show(){
+        var item = galleries[current.key][current.index];
+        img.src = item.src;
+        img.alt = item.alt;
+        indicator.textContent = (current.index+1) + ' / ' + galleries[current.key].length;
+    }
+    document.addEventListener('keydown', function(e){
+        if(!modal.classList.contains('active')) return;
+        if(e.key === 'Escape') { modal.classList.remove('active'); document.body.style.overflow=''; }
+        if(e.key === 'ArrowLeft') window.prevSlide(e);
+        if(e.key === 'ArrowRight') window.nextSlide(e);
+    });
+})();
+</script>
 
 </body>
 </html>
