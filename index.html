@@ -23,9 +23,9 @@
         .name-block h1{font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.1}
         .name-block .sub{font-size:1rem;color:var(--ink2);margin-top:6px;font-weight:500}
         .contact-block{text-align:right;font-family:var(--mono);font-size:.78rem;color:var(--ink2);line-height:2}
-        .contact-block a{color:var(--accent);text-decoration:none}
+        .contact-block a{color:var(--ink);text-decoration:none}
         .identity-bar{background:var(--ink);color:#fff;padding:14px 20px;border-radius:6px;font-size:.95rem;font-weight:600;display:flex;align-items:center;gap:12px}
-        .identity-bar::before{content:'→';font-family:var(--mono);color:var(--yellow);font-size:1.1rem;flex-shrink:0}
+        .identity-bar::before{content:'→';font-family:var(--mono);color:#fff;font-size:1.1rem;flex-shrink:0}
         .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:20px;background:var(--card)}
         .sg-cell{padding:16px 18px;border-right:1px solid var(--line)}
         .sg-cell:last-child{border-right:none}
@@ -33,12 +33,12 @@
         .sg-val{font-size:.86rem;font-weight:600;line-height:1.6}
         .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
         .chip{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;border:1.5px solid}
-        .chip-b{border-color:var(--accent);color:var(--accent)}
+        .chip-b{border-color:var(--ink);color:var(--ink)}
         .chip-s{border-color:var(--green);color:var(--green)}
 
         /* SECTION */
         .sec-head{display:flex;align-items:center;gap:14px;margin:52px 0 28px}
-        .sec-num{font-family:var(--mono);font-size:.75rem;color:var(--accent);font-weight:700;background:#ede9fe;padding:3px 9px;border-radius:4px}
+        .sec-num{font-family:var(--mono);font-size:.75rem;color:#6b7280;font-weight:700;background:#f1f3f5;padding:3px 9px;border-radius:4px}
         .sec-title{font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
         .sec-head::after{content:'';flex:1;height:1px;background:var(--line)}
 
@@ -47,11 +47,11 @@
         .work-item:last-child{border-bottom:none}
         .work-company{font-weight:800;font-size:.93rem;line-height:1.35}
         .work-period{font-family:var(--mono);font-size:.7rem;color:var(--ink2);margin-top:4px}
-        .work-role{font-size:.77rem;color:var(--accent);font-weight:700;margin-top:6px;background:#ede9fe;display:inline-block;padding:1px 7px;border-radius:4px}
+        .work-role{font-size:.77rem;color:#6b7280;font-weight:700;margin-top:6px;background:#f1f3f5;display:inline-block;padding:1px 7px;border-radius:4px}
         .work-right h4{font-size:.93rem;font-weight:700;margin-bottom:10px}
         .work-bullets{list-style:none}
         .work-bullets li{font-size:.85rem;color:var(--ink2);line-height:1.65;padding-left:16px;position:relative;margin-bottom:5px}
-        .work-bullets li::before{content:'·';position:absolute;left:4px;color:var(--accent);font-weight:900}
+        .work-bullets li::before{content:'·';position:absolute;left:4px;color:#6b7280;font-weight:900}
         .work-bullets li strong{color:var(--ink);font-weight:700}
         .work-tech{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
         .wt{font-family:var(--mono);font-size:.69rem;background:var(--tag);padding:2px 8px;border-radius:4px;color:var(--ink2)}
@@ -64,28 +64,27 @@
 
         /* PROJECT */
         .project-card{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:20px;overflow:hidden;transition:border-color .2s}
-        .project-card:hover{border-color:var(--accent)}
+        .project-card:hover{border-color:var(--ink)}
         .pc-header{padding:20px 24px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px}
         .pc-badge{font-family:var(--mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border-radius:4px;margin-bottom:6px;display:inline-block}
-        .badge-poem{background:#e8f5e9;color:#2e7d32}
-        .badge-k1{background:#fff4e8;color:#c06800}
-        .badge-side{background:#eef0ff;color:#3949ab}
+        .badge-poem{background:#f1f3f5;color:#6b7280}
+        .badge-k1{background:#f1f3f5;color:#6b7280}
+        .badge-side{background:#f1f3f5;color:#6b7280}
         .pc-title{font-size:1.08rem;font-weight:800}
         .pc-period{font-family:var(--mono);font-size:.7rem;color:var(--ink2);background:var(--tag);padding:4px 10px;border-radius:5px;white-space:nowrap;align-self:flex-start}
         .pc-body{padding:20px 24px}
-        .arch-box{background:#f8f9fb;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;padding:14px 16px;margin-bottom:16px}
-        .arch-label{font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+        .arch-box{background:#f8f9fb;border:1px solid var(--line);border-left:3px solid #6b7280;border-radius:6px;padding:14px 16px;margin-bottom:16px}
+        .arch-label{font-family:var(--mono);font-size:.7rem;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
         .arch-box p{font-size:.84rem;line-height:1.65;color:var(--ink2)}
         .arch-box p strong{color:var(--ink)}
         .story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
         .story-cell{border:1px solid var(--line);border-radius:8px;padding:12px 14px}
-        .story-label{font-family:var(--mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
-        .sl-p{color:var(--red)}.sl-a{color:var(--accent)}.sl-r{color:var(--green)}.sl-w{color:#7c5cfc}
+        .story-label{font-family:var(--mono);font-size:.68rem;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
         .story-cell p{font-size:.82rem;line-height:1.6;color:var(--ink2)}
         .story-cell p strong{color:var(--ink)}
         .metrics-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
         .metric{border:1.5px solid var(--line);border-radius:8px;padding:10px 16px;text-align:center;min-width:88px}
-        .mv{font-family:var(--mono);font-size:1.15rem;font-weight:700;color:var(--accent)}
+        .mv{font-family:var(--mono);font-size:1.15rem;font-weight:700;color:var(--ink)}
         .ml{font-size:.7rem;color:var(--ink2);margin-top:2px}
         .ts-box{background:#fff9f0;border:1px solid #f0c87a;border-radius:8px;padding:14px 16px;margin-bottom:14px}
         .ts-q{font-weight:700;font-size:.86rem;margin-bottom:6px}
@@ -112,7 +111,7 @@
         .skills-table tr:nth-child(even) td{background:#f5f6f8}
         .sk-cat{font-weight:700;color:var(--ink);width:120px}
         .sk-items{color:var(--ink2);line-height:1.7}
-        .sk-items strong{color:var(--accent);font-weight:700}
+        .sk-items strong{color:var(--ink);font-weight:700}
 
         .edu-grid{display:grid;grid-template-columns:160px 1fr;gap:10px 28px;font-size:.86rem}
         .edu-date{color:var(--ink2);font-family:var(--mono);font-size:.7rem;padding-top:3px}
@@ -212,8 +211,8 @@
         }
         .pc-header-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
         .screenshot-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;font-size:.72rem;font-weight:600;color:var(--ink2);background:var(--card);border:1.5px solid var(--line);border-radius:999px;cursor:pointer;transition:all .18s ease;font-family:var(--mono);letter-spacing:.02em;height:28px;box-sizing:border-box}
-        .screenshot-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-        .screenshot-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+        .screenshot-btn:hover{border-color:#6b7280;color:#6b7280;transform:translateY(-1px)}
+        .screenshot-btn:hover{border-color:#6b7280;color:#6b7280;transform:translateY(-1px)}
         .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;align-items:center;justify-content:center}
         .modal-overlay.active{display:flex}
         .modal-content{position:relative;max-width:900px;width:92%;max-height:85vh}
@@ -246,35 +245,38 @@
         <div class="header-top">
             <div class="name-block">
                 <h1>최보원</h1>
-                <div class="sub">복잡한 도메인을 시스템으로 풀어내는 Backend Engineer (3년 10개월)</div>
+                <div class="sub">Backend Engineer (3년 10개월)</div>
             </div>
             <div class="contact-block">
                 <div>📞 010-6740-3117</div>
-                <div>📧 <a href="mailto:bowon127@gmail.com">bowon127@gmail.com</a></div>
+                <div>📧 bowon127@gmail.com</a></div>
             </div>
         </div>
         <div class="identity-bar">
-            수작업을 시스템으로 바꾸고, 데이터 불일치를 구조로 막는 백엔드 엔지니어입니다.
+            수작업을 자동화하고, 데이터 정합성을 구조로 해결하는 백엔드 엔지니어입니다.
         </div>
         <div class="summary-grid">
             <div class="sg-cell">
                 <div class="sg-label">경력 요약</div>
-                <div class="sg-val">백엔드 2곳 · 총 3년 10개월<br>복잡 도메인 설계~운영<br>전 과정 경험</div>
+                <div class="sg-val">백엔드 2곳 · 총 3년 10개월<br>
+                    정산·결제 도메인 설계·개발·운영 경험<br>
+                    데이터 정합성 및 구조 개선 중심 개발</div>
             </div>
             <div class="sg-cell">
                 <div class="sg-label">핵심 강점</div>
-                <div class="sg-val">복잡 비즈니스 로직 구조화<br>데이터 정합성 보장<br>수작업 시스템 자동화</div>
+                <div class="sg-val">복잡 비즈니스 로직 구조화<br>데이터 정합성 보장<br>수작업 시스템 자동화<br>운영 안정성 확보<br>확장 가능한 구조 설계</div>
             </div>
             <div class="sg-cell">
                 <div class="sg-label">주요 기술</div>
                 <div class="chips">
                     <span class="chip chip-b">Java</span>
                     <span class="chip chip-b">Spring</span>
+                    <span class="chip chip-b">Javascript</span>
                     <span class="chip chip-b">JPA/MyBatis</span>
                     <span class="chip chip-b">MariaDB</span>
-                    <span class="chip chip-b">Oracle</span>
-                    <span class="chip chip-s">정합성 설계</span>
-                    <span class="chip chip-s">배치 자동화</span>
+                    <span class="chip chip-b">OracleDB</span>
+<!--                    <span class="chip chip-s">정합성 설계</span>-->
+<!--                    <span class="chip chip-s">배치 자동화</span>-->
                 </div>
             </div>
         </div>
@@ -293,9 +295,9 @@
             <div class="work-right">
                 <h4>주요 기여</h4>
                 <ul class="work-bullets">
-                    <li>가상계좌 관리자 시스템 신규 구축 → <strong>운영 수동 대응 및 CS 처리 시간 단축</strong></li>
-                    <li>기존 SMS 알림 이벤트 세분화 + 텔레그램 채널 신규 추가·메시지 상세화 → <strong>장애 인지 시간을 수 분 이내로 단축</strong></li>
-                    <li>외부 공지사항 엑셀 수집 배치 자동화 → <strong>월 단위 수작업 완전 제거</strong>, 입력 오류·누락 해소</li>
+                    <li>가상계좌 관리자 시스템 신규 구축 → 운영 수동 대응 및 CS 처리 시간 단축</li>
+                    <li>SMS 알림 이벤트 세분화 및 Telegram 채널 연동, 메시지 구조 개선 → 장애 인지 시간을 분 단위로 단축</li>
+                    <li>외부 공지사항 엑셀 수집 배치 자동화 → 월 단위 수작업 제거 및 입력 오류·누락 방지</li>
                 </ul>
                 <div class="work-tech">
                     <span class="wt">Java</span><span class="wt">Spring Boot</span><span class="wt">MyBatis</span>
@@ -313,15 +315,15 @@
             <div class="work-right">
                 <h4>주요 기여</h4>
                 <ul class="work-bullets">
-                    <li>결제·정산·매입·관리자 페이지 도메인 담당 — 설계·개발·운영</li>
-                    <li>하드코딩된 정산 정책 값 DB화 → <strong>운영자가 DB 변경만으로 정책 대응 가능</strong>, 배포 없는 정책 변경 체계 구축</li>
-                    <li>다중 테이블 삽입 트랜잭션 정합성 개선 + 중복 방지 DB 제약 조건 적용 → <strong>금액 불일치 해소</strong></li>
-                    <li>가상계좌 통합 Socket Client 설계·구현 <em>(원천사 계약 미성사로 도입 보류)</em> 및 펌뱅킹 API 공통 인터페이스 설계 주도</li>
-                    <li>내부 API 멀티 모듈 아키텍처 단독 전환, 백오피스 웹 취약점 대응 2인 TF 참여 (예외 처리 구조 개선·SMS 차단 로직 단독 담당)</li>
-                    <li>모든 배포 전 코드 리뷰 수행 (Git 프로젝트는 PR 기반, SVN 프로젝트는 화면 공유 방식)</li>
+                    <li>결제·정산·매입·관리자 페이지 전반 도메인 담당 (설계·개발·운영)</li>
+                    <li>하드코딩된 정산 정책을 DB 기반으로 전환 → 배포 없이 운영자가 정책 변경 가능하도록 구조 개선</li>
+                    <li>다중 테이블 삽입 시 트랜잭션 정합성 개선 및 중복 방지 제약 조건 적용 → 금액 불일치 문제 해소</li>
+                    <li>가상계좌 통합 Socket Client 설계·구현 및 펌뱅킹 API 공통 인터페이스 설계 주도</li>
+                    <li>내부 API 멀티 모듈 아키텍처 전환 단독 수행, 백오피스 웹 취약점 대응 TF 참여 (예외 처리 구조 개선 및 SMS 차단 로직 담당)</li>
+                    <li>모든 배포 전 코드 리뷰 수행 (Git: PR 기반 / SVN: 화면 공유 방식)</li>
                 </ul>
                 <div class="work-tech">
-                    <span class="wt">Java</span><span class="wt">Spring Boot</span>저
+                    <span class="wt">Java</span><span class="wt">Spring Boot</span>
                     <span class="wt">JPA</span><span class="wt">MyBatis</span><span class="wt">JSP</span>
                     <span class="wt">JavaScript</span><span class="wt">jQuery</span><span class="wt">HTML/CSS</span><span class="wt">Vue2</span>
                     <span class="wt">MariaDB</span><span class="wt">OracleDB</span>
@@ -346,31 +348,40 @@
         </div>
         <div class="pc-body">
             <div class="arch-box">
-                <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>카드 종류별 수수료·수수료율·무이자 할부 여부 등 정산 정책 값이 전부 조건문에 하드코딩돼 있어, <strong>정책이 바뀔 때마다 코드 수정·재배포가 필요</strong>했고 누락 시 금액 오류로 직결되는 리스크가 있었습니다. Enum/상수 클래스로 Application 단에서 관리하는 방안도 있었지만, 수수료가 카드별·카드 종류별로 수십 가지에 달하고 변동 빈도가 높아 결국 코드 수정·재배포가 반복되는 구조였기 때문에 <strong>DB + 관리자 화면</strong> 방식이 운영 효율성 면에서 가장 적합하다고 판단했습니다. 이 값들을 <strong>DB로 이관</strong>하고, 운영자가 직접 정책을 등록·수정·삭제할 수 있도록 <strong>관리자 페이지 CRUD 화면을 신규 구축</strong>해 개발팀 인터럽트 없이 정책 변경이 가능한 구조로 개선했습니다. 계산 로직은 메서드 단위로 책임을 분리해 가독성·재사용성을 확보했습니다. 다중 테이블 삽입 중 일부 실패 시 금액 불일치가 발생하던 문제는 예외 케이스를 분석하고 <strong>중복 방지 DB 제약 조건</strong>으로 원천 차단했습니다.</p>
+                <div class="arch-label">● 설계 결정 (Why)</div>
+                <p>카드별 수수료·무이자 할부 등 정산 정책이 조건문에 하드코딩되어 있어
+                    정책 변경 시마다 코드 수정 및 재배포가 필요했고, 누락 시 금액 오류로 이어지는 리스크가 존재했습니다.
+
+                    정책 변동 빈도와 경우의 수를 고려할 때 Application 레벨 관리(Enum/상수)는 한계가 있다고 판단하여,
+                    <strong>정책을 DB로 이관하고 관리자 화면에서 직접 관리하는 구조로 설계</strong>했습니다.
+
+                    또한 다중 테이블 처리 중 일부 실패 시 금액 불일치가 발생하는 문제를 확인하여,
+                    <strong>DB 제약 조건 기반으로 정합성을 보장하는 구조로 개선</strong>했습니다.</p>
             </div>
             <div class="story-grid">
                 <div class="story-cell">
-                    <div class="story-label sl-p">🔴 문제</div>
-                    <p>카드 종류·수수료율·무이자 할부 여부 등 정산 정책이 조건문에 하드코딩 → 정책 변경 시 코드 수정·재배포 필요. 다중 테이블 삽입 중 일부 실패 시 <strong>금액 불일치 발생</strong></p>
+                    <div class="story-label sl-p">● 문제</div>
+                    <p>정산 정책 하드코딩 → 정책 변경 시 코드 수정 및 재배포 필요. 다중 테이블 처리 중 일부 실패 시 금액 불일치 발생</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-a">🟣 내 역할·행동</div>
-                    <p>하드코딩된 정책 값을 DB로 이관하고 <strong>관리자 페이지에 정책 CRUD 화면 신규 구축</strong>으로 운영자 직접 관리 가능하게 개선. 계산 로직은 메서드 단위로 책임 분리. 트랜잭션 불일치 케이스 분석 후 중복 방지 DB 제약 조건 적용으로 원천 차단</p>
+                    <div class="story-label sl-a">● 내 역할·행동</div>
+                    <p>정산 정책을 DB로 이관하고 관리자 페이지 CRUD 기능 신규 구축. 계산 로직을 메서드 단위로 분리하여 가독성 및 재사용성 개선. 트랜잭션 불일치 케이스 분석 후 중복 방지 DB 제약 조건 적용</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-r">🟢 결과</div>
-                    <p>정책 변경 시 코드 수정 없이 <strong>DB 변경만으로 대응 가능</strong>, 반복 발생하던 <strong>금액 불일치 해소</strong>, 정산 매출 조회 <strong>체감 속도 개선</strong></p>
+                    <div class="story-label sl-r">● 결과</div>
+                    <p>정책 변경 시 배포 없이 DB 변경만으로 대응 가능하도록 개선. 반복 발생하던 금액 불일치 문제 해소. 정산 매출 조회 성능 개선</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-w">🟡 배운 점</div>
-                    <p>금융 도메인에서 자주 바뀌는 값을 하드코딩하면 변경 리스크가 그대로 장애로 이어짐. 바뀔 수 있는 값은 <strong>DB/설정으로 분리해 운영자가 직접 관리</strong> 가능하게 하고, 정합성은 구조 설계 단계에서 <strong>DB 제약 조건으로 방어층</strong>을 두는 것이 핵심</p>
+                    <div class="story-label sl-w">● 배운 점</div>
+                    <p>금융 도메인에서는 자주 변경되는 값을 하드코딩할 경우 변경 리스크가 곧 장애로 이어질 수 있습니다.
+                        따라서 변경 가능성이 높은 값은 DB/설정으로 분리하고,
+                        정합성은 애플리케이션 로직뿐 아니라 DB 제약 조건으로 이중 방어하는 것이 중요함을 학습했습니다.</p>
                 </div>
             </div>
-            <div class="ts-box">
-                <div class="ts-q">트러블슈팅: 중복 방지 DB 제약 조건 적용 시 레거시 중복 데이터로 인한 마이그레이션 오류</div>
-                <div class="ts-a">중복 방지 DB 제약 조건(Unique Key) 추가 DDL 수행 시 이미 중복 적재된 레거시 데이터가 제약 위반으로 실패. 적용 전 중복 건 전수 조회 → 최신 데이터 기준 보정 스크립트 작성 → 트랜잭션 내 순차 수행으로 해결. 오류 발생 내역과 수정 과정을 Confluence에 기록해 팀 내 공유.</div>
-            </div>
+<!--            <div class="ts-box">-->
+<!--                <div class="ts-q">트러블슈팅: 중복 방지 제약 조건 적용 시 레거시 데이터 충돌 발생</div>-->
+<!--                <div class="ts-a">중복 방지 DB 제약 조건(Unique Key) 추가 DDL 수행 시 이미 중복 적재된 레거시 데이터가 제약 위반으로 실패. 적용 전 중복 건 전수 조회 → 최신 데이터 기준 보정 스크립트 작성 → 트랜잭션 내 순차 수행으로 해결. 오류 발생 내역과 수정 과정을 Confluence에 기록해 팀 내 공유.</div>-->
+<!--            </div>-->
         </div>
         <div class="pc-footer">
             <div class="work-tech">
@@ -384,30 +395,47 @@
         <div class="pc-header">
             <div>
                 <div class="pc-badge badge-k1">케이원피에스 · 2024.12 – 2025.01</div>
-                <div class="pc-title">백오피스 웹 취약점 대응 및 예외 처리 구조 개선</div>
+                <div class="pc-title">백오피스 웹 취약점 대응 — 예외 처리 구조 개선 및 보안 강화</div>
             </div>
         </div>
         <div class="pc-body">
             <div class="arch-box">
-                <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>웹 취약점 진단에서 <strong>관리자 페이지 예외 발생 시 내부 오류 메시지가 외부로 노출되는 이슈</strong>가 확인되었고, 이를 수정하는 과정에서 <strong>예외 처리가 십여 개의 개별 핸들러로 과도하게 세분화되어 팀원마다 잘못된 핸들러를 선택하는 경우(예: NoData 에러를 Duplicate 에러 핸들러로 처리)가 빈번</strong>함을 발견했습니다. 잘못된 핸들러가 선택되면 해당 에러 코드에 등록된 <strong>맞지 않는 메시지가 사용자에게 그대로 노출</strong>되는 문제까지 연쇄적으로 발생했습니다. 개별 핸들러를 하나씩 수정하는 방안도 있었지만, 핸들러가 추가될수록 같은 실수가 반복될 <strong>구조적 문제</strong>였기 때문에 공통 ExceptionHandler로 일원화하는 방향을 택했습니다. 단순 노출 차단에 그치지 않고 <strong>근본 원인인 예외 처리 구조를 CustomException + ErrorCode 기반 공통 ExceptionHandler</strong>로 통합해 분류 실수를 구조적으로 차단하고 내부 오류 메시지 노출 문제를 함께 해결했습니다. 추가로 SMS 발송 버튼 무한 클릭 이슈는 <strong>카운트 기반 임계치 차단 로직</strong>으로 대응했습니다.</p>
+                <div class="arch-label">● 설계 결정 (Why)</div>
+                <p>웹 취약점 진단 과정에서 관리자 페이지 예외 발생 시
+                    <strong>내부 오류 메시지가 외부로 노출되는 문제</strong>가 확인되었습니다.
+
+                    원인 분석 결과, 예외 처리가 십여 개의 개별 핸들러로 분산되어 있어
+                    팀원마다 잘못된 핸들러를 선택하는 경우가 빈번했고
+                    (예: NoData → Duplicate 핸들러 처리),
+
+                    이로 인해 <strong>잘못된 에러 메시지가 사용자에게 노출되는 구조적 문제</strong>가 존재했습니다.
+
+                    단순 메시지 차단이 아닌 근본 해결을 위해
+                    <strong>CustomException + ErrorCode 기반의 공통 ExceptionHandler로 구조를 일원화</strong>하여
+                    예외 분류 실수를 구조적으로 차단하고, 내부 메시지 노출 문제를 함께 해결했습니다.
+
+                    또한 SMS 발송 버튼 무한 클릭 이슈는 <strong>시간 내 요청 횟수 제한 로직을 적용해 무한 발송 및 오남용을 방지</strong>했습니다.</p>
             </div>
             <div class="story-grid">
                 <div class="story-cell">
-                    <div class="story-label sl-p">🔴 문제</div>
-                    <p>웹 취약점 진단에서 관리자 페이지 예외 발생 시 <strong>내부 오류 메시지 외부 노출</strong> 이슈 확인. 수정 과정에서 예외 처리가 십여 개의 개별 핸들러로 과도하게 세분화되어 <strong>팀원이 잘못된 핸들러를 선택해 처리하는 경우 빈번</strong>함을 발견 (예: NoData 에러를 Duplicate 에러 핸들러로 처리). 로그인·비밀번호 확인 SMS 발송 버튼이 무한 클릭 가능</p>
+                    <div class="story-label sl-p">● 문제</div>
+                    <p>예외 발생 시 내부 오류 메시지 외부 노출. 분산된 ExceptionHandler로 인해 잘못된 예외 처리 빈번. SMS 발송 버튼 무한 클릭 가능 (보안 및 비용 리스크)</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-a">🟣 내 역할·행동</div>
-                    <p><strong>팀원 1명과 2인 TF로 웹 취약점 진단 대응</strong>, <strong>예외 처리 구조 개선 + SMS 차단 로직</strong> 단독 담당. 노출 차단에 그치지 않고 근본 원인을 파고들어, 분산된 예외 처리를 <strong>CustomException + ErrorCode 기반 공통 ExceptionHandler</strong>로 통합해 예외 분류 실수 구조적 차단 및 내부 오류 메시지 노출 해결. SMS 발송 버튼에 시간 내 카운트 기반 임계치 차단 로직 적용</p>
+                    <div class="story-label sl-a">● 내 역할·행동</div>
+                    <p>2인 TF로 웹 취약점 진단 대응 참여, 예외 처리 구조 개선 + SMS 차단 로직 담당. 예외 처리 구조를 CustomException + ErrorCode 기반 공통 핸들러로 통합. 예외 분류 체계를 재정의하여 잘못된 핸들러 선택 방지. SMS 발송 로직에 시간 내 요청 횟수 제한 로직 적용</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-r">🟢 결과</div>
-                    <p>예외 처리를 <strong>CustomException + ErrorCode 공통 핸들러로 일원화</strong>해 예외 분류 실수 구조적 방지. 내부 오류 메시지 외부 노출 <strong>원천 차단</strong>. SMS 무한 발송 차단으로 운영 리스크 최소화</p>
+                    <div class="story-label sl-r">● 결과</div>
+                    <p>예외 처리 구조 일원화로 예외 분류 실수 구조적 방지<br>
+                        내부 오류 메시지 외부 노출 원천 차단<br>
+                        SMS 무한 발송 차단으로 보안 및 운영 리스크 감소</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-w">🟡 배운 점</div>
-                    <p>예외 처리를 <strong>세분화하는 것과 '쉽게 쓸 수 있게 하는 것'은 다름</strong>. 사용하는 사람이 실수하기 어려운 구조로 설계하는 것이 결국 보안·유지보수 양쪽을 동시에 잡는 길임을 체감</p>
+                    <div class="story-label sl-w">● 배운 점</div>
+                    <p>예외 처리는 단순히 세분화하는 것이 아니라,
+                        사용자의 실수를 줄일 수 있도록 구조적으로 설계하는 것이 중요함을 느꼈습니다.
+                        구조 설계를 통해 보안 문제와 유지보수성을 동시에 개선할 수 있음을 경험했습니다.</p>
                 </div>
             </div>
         </div>
@@ -423,30 +451,49 @@
         <div class="pc-header">
             <div>
                 <div class="pc-badge badge-k1">케이원피에스 · 2024.08 – 2024.09</div>
-                <div class="pc-title">펌뱅킹 API 공통 인터페이스 설계 및 통합 개발</div>
+                <div class="pc-title">펌뱅킹 API 통합 개발 — 공통 인터페이스 기반 구조 설계</div>
             </div>
         </div>
         <div class="pc-body">
             <div class="arch-box">
-                <div class="arch-label">🏗 설계 결정 (Why)</div>
-                <p>기존에는 통신망마다 별도 프로젝트로 관리하고 있었지만, 내부 처리 로직과 DB 구조가 대부분 동일하고 데이터만 다른 수준이었습니다. 매번 신규 통신망이 추가될 때마다 새 프로젝트를 생성하는 것은 중복이 심하고 유지보수 비용이 계속 증가하는 구조였습니다. <strong>공통 인터페이스 기반 라우팅 API</strong>를 설계하여 통신망별 구현체만 추가하면 되는 구조로 통합했습니다. 공통 오류 처리·로깅 기준도 단일 지점에서 관리하여 운영 대응의 일관성을 높였습니다.</p>
+                <div class="arch-label">● 설계 결정 (Why)</div>
+                <p>기존에는 통신망별로 별도 프로젝트를 운영하고 있었지만,
+                    내부 처리 로직과 DB 구조는 대부분 동일하고 일부 데이터만 다른 수준이었습니다.
+
+                    신규 통신망 추가 시마다 유사한 프로젝트를 반복 생성하는 구조는
+                    중복 코드 증가와 유지보수 비용 확대로 이어질 수 있다고 판단했습니다.
+
+                    이를 개선하기 위해 <strong>공통 인터페이스 기반 라우팅 API 구조를 설계</strong>하여
+                    통신망별 구현체만 추가하면 확장 가능한 구조로 통합했습니다.
+
+                    또한 공통 오류 처리 및 로깅 기준을 단일 지점에서 관리하도록 설계해
+                    운영 대응의 일관성을 확보했습니다.</p>
             </div>
             <div class="story-grid">
                 <div class="story-cell">
-                    <div class="story-label sl-p">🔴 문제</div>
-                    <p>외부 통신망마다 별도 연동 코드로 중복 심각. 신규 통신망 추가 시 유사 코드 반복 작성 필요. 공통 오류 처리·로깅 기준 없어 운영 대응 어려움</p>
+                    <div class="story-label sl-p">● 문제</div>
+                    <p>통신망별 개별 프로젝트 운영으로 코드 중복 심각.
+                        신규 통신망 추가 시 유사 로직 반복 개발 필요.
+                        공통 오류 처리 및 로깅 기준 부재로 운영 대응 비일관성</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-a">🟣 내 역할·행동</div>
-                    <p>공통 인터페이스 기반 라우팅 API 설계·구현 주도. 송금·거래결과조회·예금주확인·잔액조회 API 전 과정 개발 및 운영 안정화 담당</p>
+                    <div class="story-label sl-a">● 내 역할·행동</div>
+                    <p>공통 인터페이스 기반 라우팅 API 설계 및 구현 주도.
+                        송금 / 거래결과조회 / 예금주확인 / 잔액조회 API 과정 개발 및 운영 안정화.
+                        통신망별 구현체 분리 구조 설계</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-r">🟢 결과</div>
-                    <p>신규 통신망 연동 시 <strong>구현체 추가만으로 대응 가능</strong>한 구조 확보. 공통 오류 처리 표준화로 운영 대응 일관성 향상. 중복 코드 제거로 유지보수 비용 감소</p>
+                    <div class="story-label sl-r">● 결과</div>
+                    <p>신규 통신망 연동 시 구현체 추가만으로 확장 가능한 구조 확보.
+                        공통 오류 처리 및 로깅 표준화로 운영 대응 일관성 향상.
+                        중복 코드 제거로 유지보수 비용 절감</p>
                 </div>
                 <div class="story-cell">
-                    <div class="story-label sl-w">🟡 배운 점</div>
-                    <p>외부 금융 API는 통신망마다 타임아웃·재시도 정책이 다름. 공통 인터페이스로 묶더라도 통신망별 특성은 구현체 레벨에서 유연하게 제어 가능해야 한다는 것을 배움</p>
+                    <div class="story-label sl-w">● 배운 점</div>
+                    <p>공통화와 유연성은 함께 설계되어야 한다는 점을 배웠습니다.
+                        외부 금융 API는 통신망마다 타임아웃, 재시도 정책 등 동작 방식이 상이하기 때문에
+                        공통 인터페이스로 구조를 통합하더라도
+                        통신망별 특성은 구현체 레벨에서 유연하게 제어할 수 있어야 함을 경험했습니다.</p>
                 </div>
             </div>
         </div>
@@ -473,8 +520,8 @@
         <tr>
             <td class="et-period">2025.07 – 08</td>
             <td>
-                <div class="et-title">가상계좌 결제 운영 시스템 구축 + 장애 알림 고도화</div>
-                <div class="et-desc">가상계좌 관리자 시스템 신규 구축으로 운영팀 자립 대응 구조 전환. 기존 SMS 알림 이벤트를 케이스별 세분화하고 Telegram 채널 추가로 본사·가맹점 수신 대상 분리 라우팅. 알림 메시지 상세화로 장애 인지·대응 속도 수 분 단위로 단축</div>
+                <div class="et-title">가상계좌 결제 운영 시스템 구축 및 장애 알림 고도화</div>
+                <div class="et-desc">가상계좌 관리자 시스템을 신규 구축해 운영팀의 자립 대응 구조로 전환했습니다. SMS 알림 이벤트를 케이스별로 세분화하고 Telegram 채널을 추가해 본사·가맹점 수신 대상을 분리했으며, 메시지 상세화를 통해 장애 인지 및 대응 속도를 분 단위로 단축했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">Spring Boot</span><span class="et-tag">MariaDB</span><span class="et-tag">Telegram API</span><span class="et-tag">Jenkins</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">포엠지</td>
@@ -483,7 +530,7 @@
             <td class="et-period">2025.06 – 07</td>
             <td>
                 <div class="et-title">외부 공지사항 크롤링 기반 엑셀 수집 배치 자동화</div>
-                <div class="et-desc">월 1회 반복되던 외부 사이트 공지사항 엑셀 수기 입력을 Jenkins + Java 배치로 자동화. Jsoup 파싱 → Apache POI 엑셀 처리 → DB 반영 파이프라인 구축. 헤더명 기반 동적 컬럼 매핑으로 엑셀 구조 변경에 유연 대응</div>
+                <div class="et-desc">월 1회 반복되던 외부 사이트 공지사항 엑셀 수기 입력을 Jenkins + Java 배치로 자동화했습니다. Jsoup 파싱 → Apache POI 엑셀 처리 → DB 반영 파이프라인을 구축하고, 헤더명 기반 동적 컬럼 매핑으로 엑셀 구조 변경에도 유연하게 대응할 수 있도록 설계했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">Jsoup</span><span class="et-tag">Apache POI</span><span class="et-tag">MariaDB</span><span class="et-tag">Jenkins</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">포엠지</td>
@@ -491,8 +538,8 @@
         <tr>
             <td class="et-period">2025.04 – 05</td>
             <td>
-                <div class="et-title">가맹점 후취정산 개발</div>
-                <div class="et-desc">선취정산 단일 구조에서 청구 구분값 기반 후취정산 분기 처리 로직 신규 도입. 2인 협업 — 팀원은 매입 배치 개발, <strong>관리자 페이지 개발</strong> 단독 담당</div>
+                <div class="et-title">가맹점 후취정산 기능 개발</div>
+                <div class="et-desc">선취정산 단일 구조에서 청구 구분값 기반 후취정산 분기 처리 로직을 신규 도입했습니다. 2인 협업으로 진행되었으며, 매입 배치는 팀원이 담당하고 관리자 페이지는 단독으로 개발했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">JSP</span><span class="et-tag">HTML/CSS</span><span class="et-tag">JavaScript</span><span class="et-tag">jQuery</span><span class="et-tag">MariaDB</span><span class="et-tag">SVN</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
@@ -501,7 +548,7 @@
             <td class="et-period">2025.03 – 04</td>
             <td>
                 <div class="et-title">관리자 권한 세분화 시스템 개발</div>
-                <div class="et-desc">소스 내 아이디 하드코딩으로 관리하던 부서별 권한 구조 개선. 권한 관리 전용 페이지 신규 구축 → 배포 없이 운영 대응 가능한 구조로 전환</div>
+                <div class="et-desc">소스 코드 내 아이디 하드코딩으로 관리되던 권한 구조를 개선하고, 권한 관리 전용 페이지를 구축해 배포 없이 운영자가 직접 권한을 변경할 수 있는 구조로 전환했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">JSP</span><span class="et-tag">HTML/CSS</span><span class="et-tag">JavaScript</span><span class="et-tag">jQuery</span><span class="et-tag">MariaDB</span><span class="et-tag">SVN</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
@@ -510,25 +557,16 @@
             <td class="et-period">2024.11 – 12</td>
             <td>
                 <div class="et-title">AML(자금세탁방지) 시스템 화면 개발</div>
-                <div class="et-desc">고객·가맹점 AML 등록 페이지 신규 개발 및 내부 AML 검증 API 연동. 정보 수정 시 변경 이력 자동 기록으로 감사 추적성 확보</div>
+                <div class="et-desc">고객 및 가맹점 AML 등록 페이지를 신규 개발하고 내부 AML 검증 API를 연동했습니다. 정보 수정 시 변경 이력을 기록하도록 구현해 감사 추적성을 확보했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">JSP</span><span class="et-tag">HTML/CSS</span><span class="et-tag">JavaScript</span><span class="et-tag">jQuery</span><span class="et-tag">MariaDB</span><span class="et-tag">SVN</span>
-            </td>
-            <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
-        </tr>
-        <tr>
-            <td class="et-period">2024.10</td>
-            <td>
-                <div class="et-title">내부 API 멀티 모듈 구조 전환</div>
-                <div class="et-desc">비대해진 레거시 단일 프로젝트를 멀티 모듈 구조로 전환. 모듈 간 의존성 정리로 변경 영향 범위 축소 및 장기 유지보수 효율 향상</div>
-                <span class="et-tag">Java</span><span class="et-tag">Spring Boot</span><span class="et-tag">Gradle</span><span class="et-tag">Git</span><span class="et-tag">Jenkins</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
         </tr>
         <tr>
             <td class="et-period">2024.06 – 07</td>
             <td>
-                <div class="et-title">차액정산 시스템 원천사 추가 개발</div>
-                <div class="et-desc">기존 차액정산 시스템에 신규 원천사 연동 추가 및 대상 가맹점 정산 처리 범위 확장. 원천사 연동 파일 업로드/다운로드 배치 파이프라인 구축(<strong>Linux crontab</strong> 기반 정기 스케줄링)으로 수동 데이터 반영 자동화</div>
+                <div class="et-title">차액정산 시스템 원천사 연동 확장</div>
+                <div class="et-desc">기존 차액정산 시스템에 신규 원천사 연동을 추가하고 대상 가맹점 정산 처리 범위를 확장했습니다. 파일 업로드/다운로드 배치 파이프라인(Linux crontab 기반)을 구축해 수동 데이터 반영을 자동화했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">MariaDB</span><span class="et-tag">Linux</span><span class="et-tag">Crontab</span><span class="et-tag">SVN</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
@@ -536,8 +574,8 @@
         <tr>
             <td class="et-period">2024.04 – 05</td>
             <td>
-                <div class="et-title">가상계좌 통합 Socket Client 설계·구현</div>
-                <div class="et-desc">원천사별 별도 프로젝트로 운영되던 가상계좌 소켓 통신을 공통 인터페이스 + 구현체 구조로 통합 설계·구현. 신규 원천사 연동 시 구현체 추가만으로 대응 가능한 구조 확보. 이 경험이 이후 펌뱅킹 API 공통 인터페이스 설계의 기반이 됨</div>
+                <div class="et-title">가상계좌 통합 Socket Client 설계 및 구현</div>
+                <div class="et-desc">원천사별로 분리되어 있던 소켓 통신을 공통 인터페이스 기반 구조로 통합했습니다. 신규 원천사 연동 시 구현체 추가만으로 확장이 가능하도록 설계했으며, 이 경험을 기반으로 이후 펌뱅킹 API 공통 인터페이스 설계를 진행했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">Spring Boot</span><span class="et-tag">Socket</span><span class="et-tag">MariaDB</span><span class="et-tag">MyBatis</span><span class="et-tag">Git</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
@@ -545,8 +583,8 @@
         <tr>
             <td class="et-period">2024.01 – 03</td>
             <td>
-                <div class="et-title">백오피스 기능 개선 TF</div>
-                <div class="et-desc">3인 TF 참여, 단독 담당 <strong>9건</strong>. 가맹점/통계 조회 검색 조건·집계 기준 확장, <strong>여러 페이지에 영향을 미치는 공통 모듈 리팩토링</strong>, <strong>정산계좌 변경 적용일 정책(D+1) 반영</strong> 등 다수 백오피스 기능 개선. 웹훅 알림 관리 및 변경 이력 추적 화면 신규 구축</div>
+                <div class="et-title">백오피스 기능 개선 TF 참여</div>
+                <div class="et-desc">3인 TF에 참여해 총 9건의 기능을 담당했습니다. 가맹점/통계 조회 조건 및 집계 기준 확장, 공통 모듈 리팩토링, 정산계좌 변경 적용일 정책(D+1) 반영 등 다수의 기능 개선을 수행했으며, 웹훅 알림 관리 및 변경 이력 추적 화면을 신규 구축했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">Spring Boot</span><span class="et-tag">JPA</span><span class="et-tag">MyBatis</span><span class="et-tag">JavaScript</span><span class="et-tag">Vue2</span><span class="et-tag">OracleDB</span><span class="et-tag">Git</span><span class="et-tag">Jenkins</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
@@ -554,8 +592,8 @@
         <tr>
             <td class="et-period">2023.10 – 2024.01</td>
             <td>
-                <div class="et-title">결제 테이블 리뉴얼에 따른 쿼리 전면 수정</div>
-                <div class="et-desc">핵심 결제 테이블 구조 변경에 따라 승인내역·거래내역·지불정산·통계 등 다수 관리자 페이지 쿼리 전면 재작성. 데이터 정합성 유지 및 운영 안정성 확보</div>
+                <div class="et-title">결제 테이블 리뉴얼에 따른 쿼리 전면 개선</div>
+                <div class="et-desc">핵심 결제 테이블 구조 변경에 따라 승인내역, 거래내역, 정산, 통계 등 다수 관리자 페이지의 쿼리를 전면 재작성했습니다. 데이터 정합성을 유지하면서 운영 안정성을 확보했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">Spring Boot</span><span class="et-tag">MyBatis</span><span class="et-tag">OracleDB</span><span class="et-tag">Git</span><span class="et-tag">Jenkins</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
@@ -564,7 +602,7 @@
             <td class="et-period">2023.05 – 07</td>
             <td>
                 <div class="et-title">정기결제 전용 관리자 시스템 개발</div>
-                <div class="et-desc">정기결제 도메인 통합 관리 전용 페이지 신규 개발 리딩. 조회·검색·에러 내역 처리 등 운영 이슈 대응 기능 제공으로 관리자 업무 생산성 향상</div>
+                <div class="et-desc">정기결제 도메인 통합 관리 페이지를 신규 개발 리딩했습니다. 조회, 검색, 에러 처리 기능을 제공해 운영 이슈 대응력을 높이고 관리자 업무 생산성을 개선했습니다.</div>
                 <span class="et-tag">Java</span><span class="et-tag">JSP</span><span class="et-tag">HTML/CSS</span><span class="et-tag">JavaScript</span><span class="et-tag">jQuery</span><span class="et-tag">MariaDB</span><span class="et-tag">SVN</span>
             </td>
             <td style="font-size:.8rem;color:var(--ink2)">케이원피에스</td>
@@ -591,17 +629,18 @@
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">📌 개요</div>
-                <p>Supabase + Gemini API + YouTube Data API + Toss Payments 기반 <strong>AI SaaS 서버 사이드 구현 프로젝트</strong>. <strong>PDF·DOCX 문서와 YouTube 영상을 Gemini 2.5 Flash로 분석</strong>해 요약·키워드·인사이트를 제공하고, 2~3개 결과를 교차 비교해 공통점·차이점·종합 인사이트까지 뽑아주는 프로젝트.</p>
+                <p>Supabase, Google Gemini API, YouTube Data API, Toss Payments 기반의 AI SaaS 서버 사이드 프로젝트입니다.
+                    PDF·DOCX 문서와 YouTube 영상을 분석하여 요약·키워드·인사이트를 제공하고,
+                    복수 결과를 교차 비교해 공통점·차이점·종합 인사이트를 도출하는 기능을 구현했습니다.</p>
             </div>
             <div class="arch-box">
                 <div class="arch-label">🔧 핵심 구현 포인트</div>
                 <ul class="feat-list">
-                    <li><strong>도메인 특화 프롬프트 DB 관리</strong> — <code>domain_configs</code> 테이블에 계약서·논문·보고서·이력서 등 유형별 프롬프트를 저장해 코드 수정 없이 확장 가능</li>
-                    <li><strong>Supabase RLS(Row Level Security)</strong> 기반 테이블별 세분화된 데이터 접근 제어 + <strong>4단계 역할 기반 팀 공유</strong>(Leader/Admin/Member/Viewer)</li>
-                    <li><strong>Toss Payments SDK 구독 결제</strong> — <code>cancel_at_period_end</code> 패턴 + lazy cleanup으로 다운그레이드 시 별도 cron 없이 만료 처리</li>
-                    <li><strong>Gemini 실시간 스트리밍 응답 처리</strong> + supadata API 연동으로 YouTube 자막 추출. API Route 기반 서버 사이드 로직 분리로 AI 분석·채팅·비교 엔드포인트 설계</li>
-                    <li><strong>분석 결과 PDF/Markdown 내보내기 + 공유 링크</strong> — <code>share_token</code> 발급으로 로그인 없이 외부 열람 가능, 링크 해제 시 즉시 접근 차단</li>
-                    <li><strong>팀 공개 API</strong> — SHA-256 해시 기반 API 키 발급, Bearer 토큰 인증 방식 REST API(<code>/api/v1/analyses</code>)로 팀 분석 결과 외부 시스템에서 조회 가능</li>
+                    <li><strong>프롬프트 DB 관리 구조 설계</strong> — <code>domain_configs</code> 테이블에 문서 유형별 프롬프트를 저장해 코드 수정 없이 확장 가능</li>
+                    <li><strong>RLS 기반 데이터 접근 제어</strong> — Supabase RLS + 4단계 역할 권한(Leader/Admin/Member/Viewer)으로 팀 단위 데이터 보안 설계</li>
+                    <li><strong>구독 결제 및 상태 관리</strong> — Toss Payments SDK 기반 기간 종료 후 해지(<code>cancel_at_period_end</code>) 방식 적용, lazy cleanup으로 별도 스케줄러 없이 만료 처리</li>
+                    <li><strong>AI 분석 서버 구조 설계</strong> — Google Gemini 스트리밍 응답 처리 + YouTube 자막 분석 연동, 분석/채팅/비교 API 분리 설계</li>
+                    <li><strong>결과 공유 및 외부 연동</strong> — PDF/Markdown 내보내기 + share_token 기반 링크 공유, SHA-256 기반 API Key + Bearer 인증 REST API 제공</li>
                 </ul>
             </div>
         </div>
@@ -627,15 +666,20 @@
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">📌 개요</div>
-                <p><strong>Spring Boot MVC + JPA 기반 OTT 콘텐츠 통합 탐색·평가 플랫폼</strong>. <strong>키노라이츠(KinoLights)</strong> 서비스를 참고해 도메인을 설계하고, TMDB·KOBIS·Gemini AI 3종 외부 API 연동, Spring Security 인증, JPA ORM을 실사용 수준으로 적용한 클론 프로젝트.</p>
+                <p>Spring Boot MVC + JPA 기반의 OTT 콘텐츠 통합 탐색·평가 플랫폼입니다.
+                    키노라이츠 서비스를 참고해 도메인을 설계하고,
+                    TMDB·KOBIS·Google Gemini API를 연동하여 콘텐츠 검색, 상세 조회, 평가 및 추천 기능을 구현했습니다.
+
+                    인증은 Spring Security 기반 Form 로그인과 Google/Kakao OAuth2를 통합 적용했으며,
+                    JPA ORM을 활용해 데이터 모델링부터 조회 최적화까지 실사용 수준으로 구성했습니다.</p>
             </div>
             <div class="arch-box">
                 <div class="arch-label">🔧 핵심 구현 포인트</div>
                 <ul class="feat-list">
-                    <li><strong>Sync-on-demand 방식 TMDB API v3 연동</strong> — 상세 페이지 최초 접근 시 Discover·Details·Credits·Watch Providers 데이터를 DB에 동기화, 이후 빠른 조회 가능</li>
-                    <li><strong>장르·OTT 매핑을 DB 테이블(<code>GenreTmdbMapping</code>)로 관리</strong> — 하드코딩 제거, 코드 수정 없이 확장 가능</li>
-                    <li><strong>Spring Security Form 로그인 + Google/Kakao OAuth2 통합</strong>, ADMIN/USER 역할 기반 URL 접근 제어. 신호등 평가는 <code>TrafficColor</code> Enum으로 구현. <strong>Gemini AI 기반 영화 추천 챗봇</strong> — 대화 히스토리 10턴 유지로 맥락 반영한 연속 대화</li>
-                    <li><strong>리팩토링</strong>: <strong>JSP → Thymeleaf 3 완전 전환</strong>(13개 뷰 마이그레이션, war→jar 패키징), XSS 3단계 이스케이프(서버·클라이언트·Thymeleaf), Admin 이중 보안(<code>@PreAuthorize</code>+URL), H2→PostgreSQL(Supabase) 전환, MyBatis 제거 후 JPA 통일</li>
+                    <li><strong>Sync-on-demand 데이터 동기화</strong> — TMDB API 호출 시 상세 페이지 최초 접근에만 Discover/Details/Credits/Watch Providers 데이터를 DB에 저장하고 이후 캐시처럼 재사용하여 조회 성능 개선</li>
+                    <li><strong>도메인 확장성을 고려한 DB 설계</strong> — 장르·OTT 매핑을 별도 테이블로 관리해 하드코딩 제거 및 코드 수정 없이 확장 가능</li>
+                    <li><strong>인증 및 권한 관리 구조 설계</strong> — Spring Security 기반 Form 로그인 + Google/Kakao OAuth2 통합, ADMIN/USER 역할 기반 URL 접근 제어 적용</li>
+                    <li><strong>AI 기반 추천 기능 구현</strong> — Google Gemini 기반 챗봇에 대화 히스토리(10턴)를 유지하여 맥락을 반영한 추천 제공</li>
                 </ul>
             </div>
         </div>
@@ -651,7 +695,7 @@
         <div class="pc-header">
             <div>
                 <div class="pc-badge badge-side">개인 프로젝트 · 2026.02.14 – 02.24</div>
-                <div class="pc-title">감정·날씨 기반 Spotify 플레이리스트 추천 서비스</div>
+                <div class="pc-title">감정·날씨 기반 음악 추천 서비스</div>
             </div>
             <div class="pc-header-right">
                 <button class="screenshot-btn" onclick="openGallery('vibecheck')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> 화면 보기</button>
@@ -661,16 +705,22 @@
         <div class="pc-body">
             <div class="arch-box">
                 <div class="arch-label">📌 개요</div>
-                <p><strong>Spotify Web API + OAuth 2.0 기반 맞춤 음악 추천 서비스</strong>. <strong>6가지 감정 × 4가지 날씨 = 24가지 조합</strong>의 키워드 매핑 추천 엔진과 <strong>Top Artists 기반 개인화 트랙 추천</strong>을 구현하고, Supabase(PostgreSQL)로 사용자별 진단 히스토리를 영속화·집계하는 서버 사이드 로직을 설계한 프로젝트.</p>
+                <p>Spotify Web API와 OAuth 2.0 기반의 맞춤 음악 추천 서비스입니다.
+
+                    감정(6종)과 날씨(4종)를 조합한 키워드 기반 추천 엔진과
+                    사용자의 Top Artists 데이터를 활용한 개인화 추천을 결합해 트랙을 제공합니다.
+
+                    또한 Supabase(PostgreSQL)에 사용자별 추천 히스토리를 저장하고
+                    기간별 집계(일/주/월)를 통해 데이터 분석이 가능한 서버 사이드 구조를 설계했습니다.</p>
             </div>
             <div class="arch-box">
                 <div class="arch-label">🔧 핵심 구현 포인트</div>
                 <ul class="feat-list">
-                    <li><strong>Spotify OAuth 2.0 Authorization Code Flow 직접 구현</strong> — State 파라미터로 CSRF 방지, HttpOnly Cookie에 토큰 저장(Production <code>Secure</code> 플래그)으로 XSS 방어. <strong>Refresh Token 자동 갱신</strong>으로 재로그인 없이 세션 유지</li>
-                    <li><strong>2회 병렬 검색 + 중복 제거 병합 + Top Artists 개인화</strong> — 감정 단독 / 날씨·감정 조합 쿼리를 <code>Promise.all</code>로 동시 호출 후 <code>Set</code> 기반 중복 제거. 로그인 사용자의 <strong>최근 청취 아티스트를 쿼리에 반영</strong>한 개인화 트랙 추천</li>
-                    <li><strong>에러 핸들링 <code>fetchWithRetry</code></strong> — 429 Rate Limit → <code>Retry-After</code> 존중 대기, 5xx → 지수 백오프 재시도. 에러 타입별 UX 분기(재로그인 CTA / 재시도 버튼)</li>
-                    <li><strong>Route Handler 기반 서버 사이드 API 설계</strong> — Spotify 인증·검색·추천 + Supabase CRUD를 API Route로 분리. 모든 토큰 관리를 서버에서 처리해 클라이언트 노출 차단</li>
-                    <li><strong>Supabase(PostgreSQL) 기반 히스토리 집계</strong> — Spotify User ID로 사용자 데이터 격리, 월/주/일 3단위 기간별 집계 로직 설계</li>
+                    <li><strong>OAuth 2.0 인증 및 보안 설계</strong> — Authorization Code Flow 구현, State 파라미터로 CSRF 방지 및 HttpOnly Cookie 기반 토큰 저장으로 XSS 대응, Refresh Token 자동 갱신으로 세션 유지</li>
+                    <li><strong>개인화 추천 로직 구현</strong> — 감정/날씨 조합 기반 2회 병렬 검색(Promise.all) 후 중복 제거(Set) 및 Top Artists 반영으로 사용자 맞춤 추천 제공</li>
+                    <li><strong>안정적인 API 호출 처리</strong> — fetchWithRetry 구현으로 429 Rate Limit(Retry-After 준수) 및 5xx 에러에 지수 백오프 재시도 적용, 에러 유형별 UX 분기</li>
+                    <li><strong>서버 중심 아키텍처 설계</strong> — 인증·추천·검색·데이터 처리를 API Route로 분리하고 토큰을 서버에서 관리하여 클라이언트 노출 차단</li>
+                    <li><strong>데이터 집계 구조 설계</strong> — Supabase 기반 사용자별 데이터 격리 및 일/주/월 단위 추천 히스토리 집계 로직 구현</li>
                 </ul>
             </div>
         </div>
@@ -707,7 +757,7 @@
     <div class="edu-grid">
         <div class="edu-date">2024.12</div><div><strong>정보처리산업기사</strong> 취득</div>
         <div class="edu-date">2024.06</div><div><strong>SQL 개발자 (SQLD)</strong> 취득</div>
-        <div class="edu-date">2021.06 – 2021.11</div><div><strong>휴먼교육센터</strong> 수료 <span style="color:var(--ink2)">(Java, Spring, JavaScript, HTML/CSS, Oracle SQL)</span></div>
+        <div class="edu-date">2021.06 – 2021.11</div><div><strong>휴먼교육센터</strong> 수료 <span style="color:var(--ink2)">(Java, Spring, JavaScript, HTML/CSS, OracleDB)</span></div>
         <div class="edu-date">2017.03 – 2019.02</div><div><strong>경인여자대학교</strong> 경영과 졸업</div>
     </div>
 
